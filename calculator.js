@@ -106,7 +106,12 @@ function clearOperatorHandler(e){
 }
 
 function dotOperatorHandler(e){
-	input('.');
+	let buffer = screen.mainSection.innerText;
+
+	if (buffer.length && !isNaN(buffer[buffer.length -1]) && buffer.search(/[.]/) === -1)
+	{
+		input('.');
+	}
 }
 
 function evalOperatorHandler(e){
